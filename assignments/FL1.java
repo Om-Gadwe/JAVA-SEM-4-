@@ -1,6 +1,15 @@
 package assignments;
-public class FL1 {
+class Addition {
+    int a = 10;
+    int b = 20;
+
+    void add() {
+        int sum = a + b;
+        System.out.println("Addition = " + sum);
+    }
+
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
+        Addition obj = new Addition();
+        obj.add();                      
     }
 }
