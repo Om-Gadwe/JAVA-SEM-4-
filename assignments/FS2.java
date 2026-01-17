@@ -1,4 +1,3 @@
-
 package assignments;
 /* 
 public class FS2 {
@@ -21,4 +20,3 @@ public class FS2{
         }
     }
 }
-
