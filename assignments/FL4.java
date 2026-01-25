@@ -1,4 +1,4 @@
-package assignments.Homework;
+package assignments;
     public class FL4 {
 	public static void main(String args[])
 	{
@@ -16,6 +16,5 @@ package assignments.Homework;
 		int s1 = Integer.parseInt(str1);
 		int s2 = Integer.parseInt(str2);
 		System.out.println("Answer is: "+(s1+s2));
-	}
+    }
 }
-
