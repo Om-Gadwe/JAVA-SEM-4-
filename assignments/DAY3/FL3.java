@@ -1,4 +1,4 @@
-package assignments;
+package assignments.DAY3;
 /* 
 class Student{
     String name;

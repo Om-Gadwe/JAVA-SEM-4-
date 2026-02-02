@@ -1,4 +1,4 @@
-package assignments;
+package assignments.DAY2;
 /* 
 public class FS2 {
     public static void main(String[] args){

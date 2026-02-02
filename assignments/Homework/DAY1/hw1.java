@@ -1,4 +1,4 @@
-package assignments.Homework;
+package assignments.Homework.DAY1;
 import java.util.Scanner;
 class hw1 {
     public static void main(String[] args) {

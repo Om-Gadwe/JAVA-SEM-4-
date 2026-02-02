@@ -1,4 +1,4 @@
-package assignments;
+package assignments.DAY4;
     public class FL4 {
 	public static void main(String args[])
 	{

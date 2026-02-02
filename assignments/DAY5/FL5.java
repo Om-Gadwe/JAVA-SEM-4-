@@ -1,4 +1,4 @@
-package assignments;
+package assignments.DAY5;
 /*
 //calling one constructor from another constructor
 class Demo{
