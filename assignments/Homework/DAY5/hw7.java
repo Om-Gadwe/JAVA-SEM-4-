@@ -1,4 +1,4 @@
-package assignments.Homework;
+package assignments.Homework.DAY5;
 class Parent {
     int x = 10;
     Parent() {

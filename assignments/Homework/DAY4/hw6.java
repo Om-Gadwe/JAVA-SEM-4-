@@ -1,4 +1,4 @@
-package assignments.Homework;
+package assignments.Homework.DAY4;
 public class hw6 {
     //Parameterized method
     /*

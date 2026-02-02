@@ -1,4 +1,4 @@
-package assignments.Homework;
+package assignments.Homework.DAY2;
 import java.util.Scanner;
 class Calc {
     double a, b;

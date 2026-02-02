@@ -1,40 +1,32 @@
-package assignments.Homework;
+package assignments.Homework.DAY2;
 import java.util.Scanner;
-class StudentCard {
-    static String clg = "Symbiosis Institute of Technology";
+class UserInfo {
     String nm;
-    int sem;
+    int rn;
     String prn;
-
-    StudentCard(String nm, int sem, String prn) {
+    UserInfo(String nm, int rn, String prn) {
         this.nm = nm;
-        this.sem = sem;
+        this.rn = rn;
         this.prn = prn;
     }
     void show() {
-        System.out.println("College: " + clg);
         System.out.println("Name: " + nm);
-        System.out.println("Semester: " + sem);
+        System.out.println("Roll No: " + rn);
         System.out.println("PRN: " + prn);
     }
 }
-public class hw4 {
+public class HW2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         System.out.print("Enter name: ");
         String nm = sc.nextLine();
-
-        System.out.print("Enter semester: ");
-        int sem = sc.nextInt();
+        System.out.print("Enter roll no: ");
+        int rn = sc.nextInt();
         sc.nextLine();
-
         System.out.print("Enter PRN: ");
         String prn = sc.nextLine();
-
-        StudentCard s = new StudentCard(nm, sem, prn);
-        System.out.println();
-        s.show();
+        UserInfo obj = new UserInfo(nm, rn, prn);
+        obj.show();
 
         sc.close();
     }

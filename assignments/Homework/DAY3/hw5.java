@@ -1,4 +1,4 @@
-package assignments.Homework;
+package assignments.Homework.DAY3;
 import java.util.Scanner;
 class Profile {
     String nm;
