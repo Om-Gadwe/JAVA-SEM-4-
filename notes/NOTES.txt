@@ -1,0 +1,44 @@
+JAVA ME SOURCE CODE -> JDK -> BYTE CODE
+C++/C ME SOURCE CODE -> MACHINE CODE
+COMPILE AND ERROR COMES UNDER JRE( JAVA RUN TIME ENVIORNMENT) 
+
+static data and class information is stored in method area/memory 
+objects are stored in heap, instance class are belong to object whereas static variable store only one data that is shared by all object which is stored in method area
+
+*)Static variables are stored separately because they belong to the class and have only one shared copy, while instance variables belong to each object so every object needs its own copy inside heap memory
+
+wrapper classes:-
+it provide a way to use primitive data type as object 
+
+
+1)Command Line Input
+Input is given while running the program, from the terminal/command prompt
+args[] is a command-line argument array
+Values are passed when you run the program
+2)Scanner Input
+Input is taken during program execution, from the keyboard.
+
+"this" keyword is used to refer to the current object of the class
+"super" keyword is used to refer to the immediate parent class
+
+Runtime polymorphism in Java is achieved through method overriding. In this program, the dog class overrides the eat() method of the animal class. When the method is called using a child class object, the JVM decides at runtime which method to execute based on the object type, hence demonstrating runtime polymorphism.
+
+final Variables Definition:
+A final variable is a constant whose value cannot be changed after initialization
+
+final Methods Definition:
+A final method cannot be overridden by a subclass
+
+final Classes Definition:
+A final class cannot be extended by any subclass
+
+Abstract Keyword Definition:
+The abstract keyword is used to define classes or methods that are incomplete and must be implemented by a subclass
+Key Characteristics of Abstract Methods Points:
+-Cannot be instantiated: Abstract methods exist only within abstract classes, which cannot be directly instantiated
+-Must be overridden: Subclasses must implement all abstract methods unless they are also abstract classes
+-Can coexist with concrete methods: Abstract classes can have both abstract and concrete methods
+-Used for polymorphism: Provides a way to achieve runtime polymorphism
+
+Interfaces in Java Definition:
+An interface is a blueprint of a class that contains abstract methods
