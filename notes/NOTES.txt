@@ -42,3 +42,27 @@ Key Characteristics of Abstract Methods Points:
 
 Interfaces in Java Definition:
 An interface is a blueprint of a class that contains abstract methods
+
+Runtime Polymorphism in Java
+It allows a method to be overridden in the subclass and called through a superclass reference.
+The method that gets called is determined at runtime, not compile-time
+
+package:Java provides many built-in packages such as:
+java.util → Collections, Date & Time
+java.io → File handling
+java.net → Networking
+java.sql → Database handling
+
+An array is a fixed-size, indexed collection of elements of the same data type
+ArrayList is a resizable dynamic array in Java (part of java.util package)
+
+Vector is similar to ArrayList but synchronized (thread-safe)
+Slower than ArrayList due to synchronization overhead
+
+Automatic memory management in Java
+Java’s Garbage Collector (GC) removes unused objects from memory
+Prevents memory leaks and improves performance
+
+A String in Java is an immutable sequence of characters
+Immutable: Once created, its value cannot be changed
+
