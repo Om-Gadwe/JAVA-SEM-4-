@@ -1,5 +1,22 @@
 package assignments.Homework.DAY8;
 import java.util.Scanner;
+/*
+a 3×3 matrix with values 1 to 9.
+create a function place(usme position aur symbol denge) to insert x ya o
+create a function check(isme symbol denge) to check whether the given symbol has filled any condition for win(row, column, diagonal)
+create a function to check whether the board is full
+ek varibale jisse while loop chaleeega gameover true ya false vo initially false kardenge 
+while loop tab tak chalega jab tak gameover false hai aur board full nahi hai
+ask player for positio of x
+call place fucntion to place x at its position 
+call check fucntio for x if true declare x as winner and set gameover as true
+if board full then khatam loop
+ask player for positio of o
+call place fucntion to place o at its position 
+call check fucntion for o if true declare o as winner and set gameover as true
+if board becomes full and gameOver is still false declare Draw
+bich bich me board display kar sakte 
+ */
 public class hw11 {
 
     static char[][] board = {
