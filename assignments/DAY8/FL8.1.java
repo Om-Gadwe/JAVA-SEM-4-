@@ -1,6 +1,6 @@
 package assignments.DAY8;
 
-class ok {
+class FL8_1 {
 
     static void fun() {
         try {
