@@ -18,44 +18,33 @@ if board becomes full and gameOver is still false declare Draw
 bich bich me board display kar sakte 
  */
 public class hw11 {
-
     static char[][] board = {
             {'1','2','3'},
             {'4','5','6'},
             {'7','8','9'}
     };
-
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
         boolean gameOver = false;
-
         while (!gameOver && !isBoardFull()) {
-
             printBoard();
-
             // Player X
             System.out.print("Player X, enter position (1-9): ");
             int posX = sc.nextInt();
             placeSymbol(posX, 'X');
-
             if (checkWinner('X')) {
                 printBoard();
                 System.out.println("Player X Wins!");
                 gameOver = true;
                 break;
             }
-
             if (isBoardFull())
                 break;
-
             printBoard();
-
             // Player O
             System.out.print("Player O, enter position (1-9): ");
             int posO = sc.nextInt();
             placeSymbol(posO, 'O');
-
             if (checkWinner('O')) {
                 printBoard();
                 System.out.println("Player O Wins!");
@@ -65,7 +54,6 @@ public class hw11 {
         }
         if (!gameOver)
             System.out.println("Game is Draw!");
-
         sc.close();
     }
     // Function using SWITCH CASE
