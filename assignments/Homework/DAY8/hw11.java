@@ -58,21 +58,8 @@ public class hw11 {
     }
     // Function using SWITCH CASE
     static void placeSymbol(int position, char symbol) {
-        int row = 0, col = 0;
-        switch (position) {
-            case 1: row = 0; col = 0; break;
-            case 2: row = 0; col = 1; break;
-            case 3: row = 0; col = 2; break;
-            case 4: row = 1; col = 0; break;
-            case 5: row = 1; col = 1; break;
-            case 6: row = 1; col = 2; break;
-            case 7: row = 2; col = 0; break;
-            case 8: row = 2; col = 1; break;
-            case 9: row = 2; col = 2; break;
-            default:
-                System.out.println("Invalid Position!");
-                return;
-        }
+        int row = (position - 1) / 3;
+        int col = (position - 1) % 3;
         if (board[row][col] != 'X' && board[row][col] != 'O') {
             board[row][col] = symbol;
         } else {
