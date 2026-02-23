@@ -1,0 +1,9 @@
+{
+    "java.project.sourcePaths": [
+        ".",
+        "jdbctesting"
+    ],
+    "java.project.referencedLibraries": [
+        "jdbctesting\\lib\\mysql-connector-j-9.6.0.jar"
+    ]
+}

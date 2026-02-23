@@ -66,3 +66,26 @@ Prevents memory leaks and improves performance
 A String in Java is an immutable sequence of characters
 Immutable: Once created, its value cannot be changed
 
+model view controller architechture and monolithic architechture
+Model–View–Controller (MVC) is a software design pattern that divides an application into three parts: the Model (data and business logic), the View (user interface), and the Controller (handles requests and connects Model and View). This separation makes the application easier to manage, maintain, and scale. MVC is commonly used in web applications and frameworks.
+Monolithic architecture is a system design where the entire application—UI, business logic, APIs, and database access—is built and deployed as one single unit. All components are tightly connected in one codebase. It is simple for small projects but becomes difficult to scale and maintain as the application grows.
+
+PreparedStatement is a JDBC interface used to execute precompiled SQL queries with parameters, improving security and performance
+It allows you to write SQL queries with placeholders (?) and then safely insert values into those placeholders before execution
+SQL INJECTION: SQL Injection is a type of security attack in which a hacker inserts malicious SQL code into input fields (like login forms) to manipulate or access a database without authorization
+
+We need Tomcat when:
+Frontend (HTML / CSS / JavaScript)
+↓
+Backend (Java)
+↓
+Database (MySQL)
+Because browser cannot directly talk to Java code
+It needs a server in between
+Tomcat acts as that server
+With Tomcat:
+User opens http://localhost:8080/login
+Tomcat receives request
+Calls your Servlet
+Servlet connects to MySQL using JDBC
+Sends response back to browser
