@@ -1,3 +1,4 @@
+package lib.DAY9;
 import java.sql.*;
 import java.util.Scanner;
 class jdbc1 {
@@ -23,7 +24,8 @@ class jdbc1 {
             System.out.println("3. Delete Student");
             System.out.println("4. Show All Students");
             System.out.println("5. Count Students");
-            System.out.println("6. Exit");
+            System.out.println("6. Select Query");
+            System.out.println("7. Exit");
             System.out.print("Enter choice: ");
 
             choice = sc.nextInt();
@@ -49,8 +51,47 @@ class jdbc1 {
                 case 5:
                     countStudents(con);
                     break;
-
+                
                 case 6:
+                       // you can change 99 to any menu option you want
+                    sc.nextLine(); // clear buffer if needed
+
+                    System.out.print("Enter SQL Query: ");
+                    String query = sc.nextLine();
+
+                    try {
+                        Statement stmt = con.createStatement();
+
+                    if (query.trim().toLowerCase().startsWith("select")) {
+
+                        ResultSet rs = stmt.executeQuery(query);
+                        ResultSetMetaData rsmd = rs.getMetaData();
+                        int columns = rsmd.getColumnCount();
+
+                        // Print column names
+                        for (int i = 1; i <= columns; i++) {
+                            System.out.print(rsmd.getColumnName(i) + "\t");
+                        }
+                        System.out.println();
+
+                        // Print rows
+                        while (rs.next()) {
+                            for (int i = 1; i <= columns; i++) {
+                                System.out.print(rs.getString(i) + "\t");
+                }
+                System.out.println();
+            }
+
+        } else {
+            int rows = stmt.executeUpdate(query);
+            System.out.println("Query executed successfully. Rows affected: " + rows);
+        }
+
+    } catch (Exception e) {
+        System.out.println("Error: " + e.getMessage());
+    }
+    break;
+                case 7:
                     System.out.println("Exiting...");
                     break;
 
