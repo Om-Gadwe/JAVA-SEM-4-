@@ -6,12 +6,12 @@ import java.rmi.registry.*;
 public class server {
     public static void main(String[] args) {
         try {
-            helloImpl obj = new helloImpl();
+            LocateRegistry.createRegistry(1099);
 
-            LocateRegistry.createRegistry(1099); // start registry
-            Naming.rebind("HelloService", obj);
+            Naming.rebind("HelloService", new helloImpl());
+            Naming.rebind("CalcService", new CalculatorImpl());
 
-            System.out.println("Server is running...");
+            System.out.println("Server running (Hello + Calculator)...");
         } catch (Exception e) {
             e.printStackTrace();
         }
