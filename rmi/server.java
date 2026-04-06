@@ -12,7 +12,8 @@ public class server {
             Naming.rebind("CalcService", new CalculatorImpl());
 
             System.out.println("Server running (Hello + Calculator)...");
-        } catch (Exception e) {
+        }
+        catch (Exception e){
             e.printStackTrace();
         }
     }
