@@ -2,10 +2,10 @@ import java.io.*;
 import java.net.*;
 
 public class ChatClient {
+
     public static void main(String[] args) {
         try {
             Socket socket = new Socket("localhost", 1234);
-            System.out.println("Connected to server!");
 
             BufferedReader input = new BufferedReader(
                     new InputStreamReader(socket.getInputStream()));
@@ -14,24 +14,26 @@ public class ChatClient {
             BufferedReader keyboard = new BufferedReader(
                     new InputStreamReader(System.in));
 
-            String msg;
-
-            while (true) {
-                // Send to server
-                System.out.print("You: ");
-                String message = keyboard.readLine();
-                output.println(message);
-
-                if (message.equalsIgnoreCase("bye")) {
-                    break;
+            // Thread to read messages from server
+            Thread readThread = new Thread(() -> {
+                String msg;
+                try {
+                    while ((msg = input.readLine()) != null) {
+                        System.out.println(msg);
+                    }
+                } catch (Exception e) {
                 }
+            });
 
-                // Receive from server
-                msg = input.readLine();
-                System.out.println("Server: " + msg);
+            readThread.start();
+
+            // Main thread → send messages
+            String message;
+            while (true) {
+                message = keyboard.readLine();
+                output.println(message);
             }
 
-            socket.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
