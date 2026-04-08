@@ -9,7 +9,7 @@ public class server {
             LocateRegistry.createRegistry(1099);
             Naming.rebind("HelloService", new helloImpl());
             Naming.rebind("CalcService", new CalculatorImpl());
-
+            Naming.rebind("FactService", new FactorialImpl());
             System.out.println("Server running (Hello + Calculator)...");
         }
         catch (Exception e){

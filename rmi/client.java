@@ -10,6 +10,7 @@ public class client {
 
             System.out.println("1. Hello Service");
             System.out.println("2. Calculator Service");
+            System.out.println("3. Factorial"); 
             int choice = sc.nextInt();
 
             if (choice == 1) {
@@ -36,6 +37,12 @@ public class client {
                     default: System.out.println("Invalid choice");
                 }
             }
+            else if (choice == 3) {
+                Factorial f = (Factorial) Naming.lookup("rmi://localhost/FactService");
+                System.out.print("Enter number: ");
+                int n = sc.nextInt();
+                System.out.println("Factorial = " + f.fact(n));
+            }   
 
         } catch (Exception e) {
             e.printStackTrace();
