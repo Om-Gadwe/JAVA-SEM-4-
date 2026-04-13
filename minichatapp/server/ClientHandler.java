@@ -2,7 +2,6 @@ package minichatapp.server;
 
 import java.io.*;
 import java.net.*;
-
 import minichatapp.model.User;
 import minichatapp.util.Protocol;
 
@@ -23,12 +22,15 @@ public class ClientHandler implements Runnable {
                     new InputStreamReader(socket.getInputStream()));
             output = new PrintWriter(socket.getOutputStream(), true);
 
-            // LOGIN
+            // 🔹 LOGIN
             String name = input.readLine();
             user = new User(name, output);
             UserManager.addUser(user);
 
             System.out.println(name + " joined");
+
+            // 🔥 Broadcast join message
+            MessageRouter.broadcast("🔵 " + name + " joined the chat", user);
 
             String message;
 
@@ -42,12 +44,24 @@ public class ClientHandler implements Runnable {
             }
 
         } catch (Exception e) {
-            System.out.println("Client error");
+            System.out.println("Client error / disconnected");
         } finally {
             try {
-                UserManager.removeUser(user);
+                if (user != null) {
+                    // 🔥 REMOVE USER
+                    UserManager.removeUser(user);
+
+                    // 🔥 Broadcast leave message
+                    MessageRouter.broadcast("🔴 " + user.getName() + " left the chat", user);
+
+                    System.out.println(user.getName() + " left");
+                }
+
                 socket.close();
-            } catch (Exception e) {}
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 }
